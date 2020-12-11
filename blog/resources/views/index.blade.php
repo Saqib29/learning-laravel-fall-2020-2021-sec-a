@@ -10,6 +10,7 @@
     <h1>Index</h1>
 
     <form action="/add-user" method="POST">
+        @method('DELETE')
         @csrf
         <input type="text" name="name"><br>
         <input type="submit" value="submit">
