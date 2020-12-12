@@ -5,32 +5,21 @@ use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
-Route::get('create_user', function () {
-    $data = [
-        'title' => 'weolcome',
-        'description' => 'lorem torem porem morem sorem jarem arem',
-        'user_id' => 1,
-        'status' => 0
-    ];   
 
-    Post::create($data);
-});
+Route::middleware('test')->group(function(){
 
-Route::get('add-post', function () {
-    $post = new Post;
-
-    $post->title = 'This is title';
-    $post->description = 'This is descripotion';
-    $post->user_id = 1;
-    $post->status = 1;
-    $post->save();
-});
-
-Route::get('update-post', function () {
-    $post = Post::find(5);
-    $post->title = 'This is new title';
-
-    $post->save();
+    Route::get('one', function () {
+        return "this is one";
+    })->middleware('test');
+    
+    Route::get('two', function () {
+        return "this is two";
+    })->middleware('test');
+    
+    Route::get('three', function () {
+        return "this is three";
+    })->middleware('test');
+    
 });
 
 Route::get('/', function () {
