@@ -1,27 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
-Route::get('index', 'HomeController@index');
-Route::post('/add-user', 'HomeController@post');
-Route::put('/add-user', 'HomeController@put');
-Route::patch('/add-user', 'HomeController@patch');
-
-Route::redirect('/add-user', '/');
-
-// Route::delete('/add-user', 'HomeController@delete');
-
-Route::prefix('admin')->group(function(){
-    Route::get('hello', function() {
-        return "<h1>Hello</h1>";
-    });    
+Route::get('create_customer', function(){
+    DB::table('customers')->insert(
+        ['name' => 'saqib', 'email'=> 'sqib@email', 'votes' => '120']
+    );
 });
 
-Route::group(['prefix' => 'admin'], function () {
-   Route::get('world', function() {
-        return "<h1>World</h1>";
-    }); 
-});
+Route::get('customers', 'CustomerController@index');
 
 Route::get('/', function () {
     return view('welcome');
