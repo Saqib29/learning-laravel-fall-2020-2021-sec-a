@@ -39,6 +39,12 @@ Route::middleware('auth')->group(function(){
 });
 
 
+// Image Upload
+Route::get('file-upload', 'ImageUploadController@image');
+Route::post('file-upload', 'ImageUploadController@store');
+
+Route::get('files', 'ImageUploadController@files');
+Route::get('delete', 'ImageUploadController@delete');
 
 Route::get('/', function () {
     return view('welcome');
