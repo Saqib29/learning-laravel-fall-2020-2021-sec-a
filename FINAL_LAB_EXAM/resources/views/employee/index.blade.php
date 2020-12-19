@@ -8,5 +8,30 @@
 </head>
 <body>
     <h1>Employee</h1>
+    <a href="/add_product"><button>Add new product</button></a>
+
+    <table>
+           
+        <tr>
+            <th>Product name</th>
+            <th>Quantity </th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        
+        @foreach ($products as $product)
+            <tr>
+                <td>{{ $product->product_name }}</td>
+                <td>{{ $product->quantity }}</td>
+                <td>{{ $product->price }}</td>
+                <td>
+                    <a href=""><button>Update</button></a>
+                    <a href=""><button>Delete</button></a>
+                </td>
+            </tr>
+        @endforeach
+        
+    </table>
+
 </body>
 </html>

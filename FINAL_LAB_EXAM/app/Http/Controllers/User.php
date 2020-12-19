@@ -42,7 +42,8 @@ class User extends Controller
                 $users = ModelsUser::where(['user_type' => 'employee'])->get();
                 return view('admin.index', ['users' => $users]);
             } else{
-                return view('employee.index');
+                $products = Product::get();
+                return view('employee.index', ['products' => $products]);
             }
         } else{
             return view('login');
