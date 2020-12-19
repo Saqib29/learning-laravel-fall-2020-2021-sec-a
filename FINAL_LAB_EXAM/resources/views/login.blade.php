@@ -7,32 +7,22 @@
     <title>Registration</title>
 </head>
 <body>
-    <form action="/registration" method="POST">
+    <form action="/login" method="POST">
         @csrf
         <table>
-            <tr>
-                <td>Name: </td>
-                <td><input type="text" name="name"></td>
-            </tr>
+           
             <tr>
                 <td>Username: </td>
                 <td><input type="text" name="username" required></td>
             </tr>
-            <tr>
-                <td>Contact No: </td>
-                <td><input type="text" name="contact" required></td>
-            </tr>
+            
             <tr>
                 <td>password: </td>
                 <td><input type="password" name="password" required></td>
             </tr>
             <tr>
-                <td>User Type: </td>
-                <td><input type="text" name="user_type" placeholder="employee" required></td>
-            </tr>
-            <tr>
                 <td></td>
-                <td><input type="submit" name="submit" value="Submit"></td>
+                <td><input type="submit" name="submit"></td>
             </tr>
         </table>
     </form>
