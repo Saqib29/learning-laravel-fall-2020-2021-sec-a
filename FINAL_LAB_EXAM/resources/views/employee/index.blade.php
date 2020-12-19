@@ -9,7 +9,7 @@
 <body>
     <h1>Employee</h1>
     <a href="/add_product"><button>Add new product</button></a>
-
+    <a href="/logout"><button>Logout</button></a>
     <table>
            
         <tr>

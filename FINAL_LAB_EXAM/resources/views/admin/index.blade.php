@@ -12,6 +12,7 @@
         <input type="text" name="search" value="Search Employee name">
         <input type="submit" value="Submit">
     </form>
+    <a href="/logout"><button>Logout</button></a>
     <table>
            
         <tr>

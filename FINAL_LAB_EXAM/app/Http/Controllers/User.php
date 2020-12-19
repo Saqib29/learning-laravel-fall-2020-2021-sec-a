@@ -27,6 +27,12 @@ class User extends Controller
         return redirect('/login');
     }
 
+    public function logout(){
+        Session::forget('user');
+
+        return redirect('/login');
+    }
+
     public function login_index(){
         return view('login');
     }
