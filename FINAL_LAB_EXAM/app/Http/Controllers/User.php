@@ -38,7 +38,8 @@ class User extends Controller
 
         if(Session::has('user')){
             if($user->user_type == 'admin'){
-                return view('admin.index');
+                $users = ModelsUser::where(['user_type' => 'employee'])->get();
+                return view('admin.index', ['users' => $users]);
             } else{
                 return view('employee.index');
             }
