@@ -25,7 +25,7 @@
                 <td>{{ $product->quantity }}</td>
                 <td>{{ $product->price }}</td>
                 <td>
-                    <a href=""><button>Update</button></a>
+                    <a href="/"><button>Update</button></a>
                     <a href=""><button>Delete</button></a>
                 </td>
             </tr>
